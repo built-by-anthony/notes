@@ -1,0 +1,9 @@
+# Python
+.venv/
+__pycache__/
+
+# mkdocs build output
+site/
+
+# macOS
+.DS_Store
