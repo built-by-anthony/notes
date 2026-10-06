@@ -16,6 +16,9 @@ theme:
         scheme: default
         toggle: { icon: material/weather-night, name: Dark mode } # Button that switches back to dark.
 
+extra_css:
+  - stylesheets/extra.css
+
 markdown_extensions:
   - admonition                                   # Enables !!! note / !!! warning callout blocks.
   - footnotes                                    # Turns [^1] references into linked footnotes at the page bottom.

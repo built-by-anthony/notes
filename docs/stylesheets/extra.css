@@ -1,0 +1,20 @@
+/* Material styles <figure> for images: `text-align: center; width: fit-content`.
+   A `/// caption` block after a code fence wraps the code in that same <figure>,
+   so the snippet inherits both and renders centered and shrink-wrapped. These
+   rules undo that for code only, leaving image captions centered as intended. */
+
+.md-typeset figure .highlight,      /* The <div> pymdownx.highlight wraps a plain code block in. */
+.md-typeset figure .highlighttable {/* The <table> variant used when line numbers are turned on. */
+  text-align: left;                 /* Overrides the centering figure inherits down onto the code. */
+}
+
+.md-typeset figure:has(> .highlight),      /* Only figures whose direct child is a code block... */
+.md-typeset figure:has(> .highlighttable) {/* ...so image figures keep their shrink-to-fit width. */
+  width: 100%;                             /* Matches the width of uncaptioned code blocks. */
+}
+
+.md-typeset figure figcaption { /* Captions on both image and code figures. */
+  text-align: left;             /* Overrides the centering inherited from <figure>. */
+  margin-inline: 0;             /* Kills Material's `margin: 1em auto`, which centers the box itself. */
+  max-width: 100%;              /* Lifts the 24rem cap so the text starts at the figure's left edge. */
+}
