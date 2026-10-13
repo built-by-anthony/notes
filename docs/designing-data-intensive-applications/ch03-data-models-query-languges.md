@@ -655,3 +655,68 @@ Perhaps the simplest, fastest, and most expresive way of writing data is an *eve
 /// caption 
 Figure 3-8. Using a lot of immutable events as teh source of truth and deriving materialized views from it
 /// 
+
+Whenever an event is appended to the log, several *materialized views* (also known as *projections* or *read models*) are also updated to reflect the effect of that event. 
+
+The idea of using events as the source of truth and expressing every state change as an event is known as *event sourcing*. The principle of maintaining separate read-optimized representations and deriving from the write-optimized representaiton is called *command query responsbility segregation* (CQRS). These terms originated in the DDD community, although similar ideas have been around for a long time. 
+
+When a request from a user comes in, it is aclled a *command*, and it first needs to be validated. Once the command has been executed and has been determined to be valid, it becomes a fact, and the corresponding event is added to the log. Consequently, the event log should contain only valid events, and a consumer of the event log that builds a materialized view is not allowed to reject an event. 
+
+It is recommended that you name your events in the past tense, because an event is a record of the fact that something has happened. 
+
+Event sourcing and CQRS have several advantages: 
+
+- For the people developing the system, events better communicate the intent of *why* something happened. Row modifications may still happend when a materialzed view processes the cancellation event, but when they are driven by the event, the reason for updates becomes much clearer. 
+- A key principle of event sourcing is that the materialized views are derived from the event log in a reproducible way. You should always be able to delete the materialized views and recompute them by processing the same events in the same order, using the same code. 
+- You can have multiple materialized views that are optimized for the particular queries that your application requires. These views can be stored in either the same database as the events or a different one, depending on your needs. They can use any data model, and they can be denormalized for fast reads. You can even keep a view only in memory and avoid persisting it, as long as it's OK to recompute the view from the event log whenever the service restarts. 
+- If you decide you want to present the existing information in a new way, building a new materialized view from the existing event log us easy. You can also evolve the system to support new features by adding new types of events or adding new properties to existing event types. You can also change new behaviors off existing events. 
+- If an event was written in error, you can write a subsequent deletion event to reverse it. Downstream views will incorporate this deletion automatically, thereby correcting the data. Event sourcing can therefore reduce the number of irreversible actions in the system, making it easier to change. 
+- The event log can also serve as an audit log of what has occured in the system, which is valuable in regulated industries that require such auditability. 
+- Event logs can typically handle higher write throughput than databases because of their sequential access patterns. If you have a temporary burst of events, the log can absorb it, and downstream systems that maintain materialized views can catch up at their own pace without becoming overwhelmed. 
+
+However, event sourcing and CQRS also have downsides:
+
+- You need to be careful if exteernal information is involvd. External information pull can fluctuate, to make event processing logic deterministic, you need to include the external information in the event itself or have a way of ensuring that the query always returns the same result. 
+- The requirement that events are immutable creates problems if events contain personal data from users, since users may exercisr thei right to request deletion of their data. 
+- You can try storing the personal data outside of the actual event, or encruupting it with a key that you can later choose to delete (a technique known as *crypto-shredding*), but that also makes it harder to recompute dervied state when needed.
+- Reprocessing events requires care if htere are externally visible side effects.
+
+The only important requirement is that the event storage system must guarantee that all materialized views process the events in exactly the same order as they appear in the log. 
+
+## DataFrames, Matrices, and Arrayys
+There are also a few data models that you are likely to encounter in an analytical or scientific context but that rarely feature OLTP systems, including DataFrames and multidimensional ararys of numbers such as matrices.
+
+*DataFrames* are a popular tool for data scientists preparing data for training ML models, but they are also widely used for data exploration, statistical data analysis, data visualization, and similar purpose. 
+
+A DataFrame supports relational-like operators that perform bulk operations on its contents. 
+
+DataFrames APIs also offer a wide variety of operations that go far beyond what relational databases offer, and the data model is often used in ways that are very different from typical relational data modeling. 
+
+![dataframe-to-matrix](images/ch03/ch03-dataframe-to-matrix.png)
+/// caption 
+Figure 3-9. Transforming a relational database of movie rating into a matrix
+///
+
+A matrix can contain only numbers, and various techniques are used to transform nonnumerical data into numbers in the matrix.
+
+Once the data is in the form of a matrix of numbers, it is amenable to linear algebra operations, which is the form of many ML algorithms. 
+
+Some databases, specialize in storing large multidimensional arrays of numbers; they are called *array databases* and are most comomonly used for scientific datasets such as geospatial mesurements, medical imaging, or observations from astronomical telescopes. 
+
+## Summary 
+Data models are a huge subject. We didn't have space to go into all the details of each model, but hopefully the overview has been enough to find out more about the model that best fits your applicaiton's requirements. 
+
+The *relational model*, despite being more than half a century old, remains an important data model for many applications - especially in data warehousing and business analytics, where relaional star or snowflake schemas and SQL queries are ubiquitious, However, several alternatives to relational data have become popular in other domains: 
+
+- The *document model* targets use cases where data comes in self-contained JSON documents and where relationahips between one document and another rare. 
+- *Graph data models* go in the opposite direction, targeting use cases where anything is potentially related to everything and where queries potentially need to traverse multiple hops to find the data of interest. 
+- *DataFrames* generalize relational data to large numbers of columns, providing a bridge between databases and the multidimensional arrays that form the basis of much machine learning, statistical data analysis, and scientific computing. 
+
+To some degree, one model can often be emulated in terms of another model. 
+
+Various specialist databases have therefore been developed for each model, providing query lagnuages and storage engines that are optimized for that particular model. However, there is also a trend for databases to expand into neighboring niches by adding support for other data mnodels.
+
+Another model we discussed is *event sourcing*, which represents data as an append-only log of immutable events and can be advantageous for modeling activities in complex business domains. An append-only log is good for writing data; in order to support efficient queries, the event log is translated into read-optimized materialized views through CQRS.
+
+One thing nonrelational data models have in common is that they typically don't enforce schema for the data they store, which can make it easier to adapt applications for changing requirements. However, your application most likely still assumes that data has a certain structure; it's just a question of whether the schema is explicit (enforced on write) or implicit (assumed on read). 
+
