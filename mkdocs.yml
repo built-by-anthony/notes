@@ -2,7 +2,6 @@ site_name: tony-notes
 theme: 
     name: material
     features: 
-        - navigation.sections # Renders top-level nav groups as bold section headers for a flattened sidebar.
         - navigation.indexes  # Lets a section's own `index.md` serve as that section;s landing page.
         - search.suggest      # Shows an inline completion of the likely query as you type in search. 
         - content.code.copy   # Adds a copy-to-clipboard button to every code block. 
@@ -15,6 +14,32 @@ theme:
       - media: "(prefers-color-scheme: light)"
         scheme: default
         toggle: { icon: material/weather-night, name: Dark mode } # Button that switches back to dark.
+nav:
+  - Home: index.md
+  - Designing Data-Intensive Applications:
+      - designing-data-intensive-applications/ch01-tradeoffs-data-systems-arch.md
+      - designing-data-intensive-applications/ch02-defining-non-functional-requirements.md
+      - designing-data-intensive-applications/ch03-data-models-query-languges.md
+  - Vibe Coding:
+      - vibe-coding/introduction.md
+      - "Part 1: Why Vibe Code?":
+          - Introduction: vibe-coding/part-1-why-vibe-code/introduction.md
+          - "Chapter 1: The Future is Here": vibe-coding/part-1-why-vibe-code/ch01-the-future-is-here.md
+          - "Chapter 2: No Winners, Only Survivors": vibe-coding/part-1-why-vibe-code/ch02-programming-no-winners-only-survivors.md
+          - "Chapter 3: The Value Vibe Coding Brings": vibe-coding/part-1-why-vibe-code/ch03-the-value-vibe-coding-brings.md
+          - "Chapter 4: The Dark Side: When Vibe Coding Goes Horribly Wrong": vibe-coding/part-1-why-vibe-code/ch04-the-dark-side.md
+          - "Chapter 7: What Skills to Learn": vibe-coding/part-1-why-vibe-code/ch07-what-skills-to-learn.md
+      - "Part 2: The Theory and Practice of Vibe Coding": 
+          - Introduction: vibe-coding/part-2-the-theory-and-practice-of-vibe-coding/introduction.md
+          - "Chapter 8: Welcome to the Vibe Coding Kitchen": vibe-coding/part-2-the-theory-and-practice-of-vibe-coding/ch08-welcome-vibe-coding-kitchen.md
+          - "Chapter 9 Understanding Your Kitchen and AI Collaborators": vibe-coding/part-2-the-theory-and-practice-of-vibe-coding/ch09-understand-your-collabs.md
+  - AI Engineering: 
+      - ai-engineering/ch01-introduction-building-ai.md
+  - AWS Certifications:
+      - AWS Certified Data Engineer Associate:
+          - "AWS Certified Data Engineer Associate Study Guide - O'Reilly":
+              - "Chapter 1. Certification Essentials": aws-data-eng-oreilly/ch01-cert-essentials.md
+              - "Chapter 2. Prerequisite Knowledge for Aspiring Data Engineers": aws-data-eng-oreilly/ch02-pre-knowledge.md
 
 extra_css:
   - stylesheets/extra.css
