@@ -7,3 +7,5 @@ site/
 
 # macOS
 .DS_Store
+
+.vscode/

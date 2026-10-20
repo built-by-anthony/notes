@@ -47,7 +47,7 @@ Some terminology:
     - Sometimes the order of the *transform* and *load* steps in swapped, resulting in *ELT*.
     - ETL processes have been generalized to *data pipelines*.
 
-![A data system composed of caches, indexes, and queues](images/simple-etl-outline.png)
+![A data system composed of caches, indexes, and queues](images/ch01/ch01-simple-etl-outline.png)
 /// caption
 A simplified outline of ETL into a data warehouse.
 ///
@@ -81,7 +81,7 @@ The answer is a *data lake* - a centralized data repository that holds a copy of
 
 ## Cloud Versus Self-Hosting
 
-![outsourcing-decisions](images/outsourcing-decisions.png)
+![outsourcing-decisions](images/ch01/ch01-outsourcing-decisions.png)
 /// caption 
 The spectrum of decisions on outsourcing software and its operations
 ///
