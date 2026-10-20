@@ -1,4 +1,5 @@
 site_name: tony-notes
+site_url: https://built-by-anthony.github.io/notes/
 theme: 
     name: material
     features: 
