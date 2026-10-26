@@ -42,6 +42,7 @@ nav:
               - "Chapter 1. Certification Essentials": aws-data-eng-oreilly/ch01-cert-essentials.md
               - "Chapter 2. Prerequisite Knowledge for Aspiring Data Engineers": aws-data-eng-oreilly/ch02-pre-knowledge.md
               - "Chapter 3. Overview of AWS Analytics and Auxiliary Services": aws-data-eng-oreilly/ch03-overview-aws-analytics-aux.md
+              - "Chapter 4. Data Ingestion and Transformation": aws-data-eng-oreilly/ch04-data-ingestion-transformation.md
 
 extra_css:
   - stylesheets/extra.css
