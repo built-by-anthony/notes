@@ -51,8 +51,12 @@ nav:
                 - "MSO Foundations": claude-certs/claude-certified-developer/foundations-prep-course/mso-foundations.md
   - Courses:
     - CI/CD:
+      - Foundations: 
+        - "Intro to CI/CD": courses/cicd/01-intro-to-cicd.md
+        - "Docker Essentials": courses/cicd/02-docker-essentials.md
       - ROSA Deployments:
-        - "ROSA Essentials": /courses/cicd/rosa-essentials.md
+        - "ROSA Essentials": courses/cicd/rosa-essentials.md
+        - "Intro to ArgoCD": courses/cicd/intro-to-argocd.md
 extra_css:
   - stylesheets/extra.css
 
