@@ -16,7 +16,7 @@ As organizations sacle and adapt to faster development cycles, there's a need to
 |**Feature**|**Virtual Machines**|**Docker Containers**|
 |-----------|--------------------|---------------------|
 |OS Requirements|Full OS instance per VM|Shares OS kernel with host| 
-|Startup Time|SLow (minutes)| Fast (seconds)|
+|Startup Time|Slow (minutes)| Fast (seconds)|
 |Resource Overhead|High|Low|
 |Portability|Limited|Highly portable|
 
