@@ -49,6 +49,10 @@ nav:
         - Claude Certified Developer:
             - "Claude Certified Developer - Foundations Prep Course": 
                 - "MSO Foundations": claude-certs/claude-certified-developer/foundations-prep-course/mso-foundations.md
+  - Courses:
+    - CI/CD:
+      - ROSA Deployments:
+        - "ROSA Essentials": /courses/cicd/rosa-essentials.md
 extra_css:
   - stylesheets/extra.css
 
