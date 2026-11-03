@@ -84,7 +84,9 @@ docker run hello-world
 
 ```text
 Hello from Docker!
-This message shows taht your installation appears to be working correctly. 
+This message shows that your installation appears to be working correctly. 
 ```
 
+## Summary 
 
+We examined how Docker differs from traditional virtual machines and why it has become foundational in modern application development. Docker's portability, efficiency, speed, scalability, and microservices alignment make it ideal for cloud-native applications. 

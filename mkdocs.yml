@@ -50,13 +50,39 @@ nav:
             - "Claude Certified Developer - Foundations Prep Course": 
                 - "MSO Foundations": claude-certs/claude-certified-developer/foundations-prep-course/mso-foundations.md
   - Courses:
-    - CI/CD:
+    - Galvanize CI/CD:
       - Foundations: 
-        - "Intro to CI/CD": courses/cicd/01-intro-to-cicd.md
-        - "Docker Essentials": courses/cicd/02-docker-essentials.md
-      - ROSA Deployments:
-        - "ROSA Essentials": courses/cicd/rosa-essentials.md
-        - "Intro to ArgoCD": courses/cicd/intro-to-argocd.md
+        - "Intro to CI/CD":
+            - "CI/CD 101": courses/galvanize-cicd/01-foundations/01-intro-to-cicd/01-cicd-101.md
+            - "CI/CD and Ops": courses/galvanize-cicd/01-foundations/01-intro-to-cicd/02-cicd-and-ops.md
+        - "Docker Essentials": 
+            - "Docker in the Cloud": courses/galvanize-cicd/01-foundations/02-docker-essentials/01-docker-in-the-cloud.md
+            - "Docker Fundamentals": courses/galvanize-cicd/01-foundations/02-docker-essentials/02-docker-fundamentals.md
+            - "Images": courses/galvanize-cicd/01-foundations/02-docker-essentials/03-images.md
+            - "Best Practices": courses/galvanize-cicd/01-foundations/02-docker-essentials/04-best-practices.md
+        - "Container Registries":
+            - "Purpose and Roles": courses/galvanize-cicd/01-foundations/03-container-registries/01-purpose-and-roles.md
+            - "Common Registries": courses/galvanize-cicd/01-foundations/03-container-registries/02-common-registries.md
+      # - Pipelines: 
+      - "ROSA Deployments":
+        - "Rosa Essentials":
+          - "Introduction to ROSA": courses/galvanize-cicd/03-rosa-deployments/02-rosa-essentials/01-introduction.md
+          - "What is ROSA?": courses/galvanize-cicd/03-rosa-deployments/02-rosa-essentials/02-what-is-rosa.md
+          - "CLI Tools": courses/galvanize-cicd/03-rosa-deployments/02-rosa-essentials/03-cli-tools.md
+          - "Routes": courses/galvanize-cicd/03-rosa-deployments/02-rosa-essentials/04-routes.md
+        - "Intro to ArgoCD":
+          - "Introduction": courses/galvanize-cicd/03-rosa-deployments/03-intro-to-argocd/01-introduction.md
+          - "Role of ArgoCD": courses/galvanize-cicd/03-rosa-deployments/03-intro-to-argocd/02-role-of-argocd.md
+          - "Comparing ArgoCD": courses/galvanize-cicd/03-rosa-deployments/03-intro-to-argocd/03-comparing-argocd.md
+          - "Concepts": courses/galvanize-cicd/03-rosa-deployments/03-intro-to-argocd/04-concepts.md
+          - "Vocabulary": courses/galvanize-cicd/03-rosa-deployments/03-intro-to-argocd/05-vocabulary.md
+        - "Deployment Strategies": 
+          - "Introduction": courses/galvanize-cicd/03-rosa-deployments/04-deployment-strategies/01-introduction.md
+          - "Deployment Considerations and Production": courses/galvanize-cicd/03-rosa-deployments/04-deployment-strategies/02-deployment-considerations-and-production.md
+          - "Rolling Updates": courses/galvanize-cicd/03-rosa-deployments/04-deployment-strategies/03-rolling-updates.md
+          - "Blue-Green Deployments":  courses/galvanize-cicd/03-rosa-deployments/04-deployment-strategies/04-blue-green-deployments.md
+          - "Canary Deployments": courses/galvanize-cicd/03-rosa-deployments/04-deployment-strategies/05-canary-deployments.md
+          - "Managing Rollouts": courses/galvanize-cicd/03-rosa-deployments/04-deployment-strategies/06-managing-rollouts.md
 extra_css:
   - stylesheets/extra.css
 
