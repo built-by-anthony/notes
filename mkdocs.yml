@@ -63,7 +63,14 @@ nav:
         - "Container Registries":
             - "Purpose and Roles": courses/galvanize-cicd/01-foundations/03-container-registries/01-purpose-and-roles.md
             - "Common Registries": courses/galvanize-cicd/01-foundations/03-container-registries/02-common-registries.md
-      # - Pipelines: 
+      - Pipelines: 
+        - "Pipeline Fundamentals":
+          - "Stages and Jobs": courses/galvanize-cicd/02-pipelines/01-pipeline-fundamentals/01-stages-and-jobs.md
+          - "Images": courses/galvanize-cicd/02-pipelines/01-pipeline-fundamentals/02-images.md
+          - "Artifacts and Caches": courses/galvanize-cicd/02-pipelines/01-pipeline-fundamentals/03-artifacts-and-caches.md 
+          - "Allowing Failure": courses/galvanize-cicd/02-pipelines/01-pipeline-fundamentals/04-allowing-failure.md
+          - "Pipeline Variables": courses/galvanize-cicd/02-pipelines/01-pipeline-fundamentals/05-pipeline-variables.md
+          - "Additional Topics": courses/galvanize-cicd/02-pipelines/01-pipeline-fundamentals/06-additional-topics.md
       - "ROSA Deployments":
         - "Rosa Essentials":
           - "Introduction to ROSA": courses/galvanize-cicd/03-rosa-deployments/02-rosa-essentials/01-introduction.md
@@ -82,7 +89,20 @@ nav:
           - "Rolling Updates": courses/galvanize-cicd/03-rosa-deployments/04-deployment-strategies/03-rolling-updates.md
           - "Blue-Green Deployments":  courses/galvanize-cicd/03-rosa-deployments/04-deployment-strategies/04-blue-green-deployments.md
           - "Canary Deployments": courses/galvanize-cicd/03-rosa-deployments/04-deployment-strategies/05-canary-deployments.md
-          - "Managing Rollouts": courses/galvanize-cicd/03-rosa-deployments/04-deployment-strategies/06-managing-rollouts.md
+      - "AWS Native Deployments":
+        - "AWS Essentials":
+          - "Introduction": courses/galvanize-cicd/04-aws-native-deployment/01-aws-essentials/01-introduction.md
+          - "Infrastructure": courses/galvanize-cicd/04-aws-native-deployment/01-aws-essentials/02-infrastructure.md
+          - "IAM": courses/galvanize-cicd/04-aws-native-deployment/01-aws-essentials/03-iam.md
+          - "Core Services": courses/galvanize-cicd/04-aws-native-deployment/01-aws-essentials/04-core-services.md
+          - "Workflows": courses/galvanize-cicd/04-aws-native-deployment/01-aws-essentials/05-workflows.md
+        - "Terraform for AWS":
+          - "Intro to Terraform": courses/galvanize-cicd/04-aws-native-deployment/02-terraform-for-aws/01-intro-to-terraform.md
+          - "Terraform Workflow": courses/galvanize-cicd/04-aws-native-deployment/02-terraform-for-aws/02-terraform-workflow.md
+          - "Terraform Configuration Anatomy": courses/galvanize-cicd/04-aws-native-deployment/02-terraform-for-aws/03-terraform-configuration-anatomy.md
+          - "Managing Resources and Best Practices with Terraform": courses/galvanize-cicd/04-aws-native-deployment/02-terraform-for-aws/04-managing-resources-best-practices-terraform.md
+          - "Terraform in CI/CD and GitOps Workflows": courses/galvanize-cicd/04-aws-native-deployment/02-terraform-for-aws/05-terraform-in-cicd-ops-workflows.md
+        
 extra_css:
   - stylesheets/extra.css
 
@@ -91,7 +111,11 @@ markdown_extensions:
   - footnotes                                    # Turns [^1] references into linked footnotes at the page bottom.
   - toc: { permalink: true }                     # Adds a clickable anchor beside every heading.
   - pymdownx.highlight                           # Syntax-highlights fenced code blocks via Pygments at build time.
-  - pymdownx.superfences                         # Nested/custom fences; required for highlight to work on all blocks.
+  - pymdownx.superfences:                         # Nested/custom fences; required for highlight to work on all blocks.
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.details                             # Makes amonitions collapsible via ??? / ???+ blocks
   - pymdownx.tasklist: { custom_checkbox: true } # Renders - [ ] / - [ x ] lsits as styled checkboxes. 
   - pymdownx.blocks.caption                      # Wraps an image + caption into <figure>/<figcaption>
