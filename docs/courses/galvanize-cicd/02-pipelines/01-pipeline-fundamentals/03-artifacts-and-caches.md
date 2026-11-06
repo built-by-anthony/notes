@@ -123,3 +123,5 @@ test-job:
     reports:
       junit: report.xml
 ```
+
+This pipeline uses Python 3.12, caches installed package downloads, and separates the build and test stages.
