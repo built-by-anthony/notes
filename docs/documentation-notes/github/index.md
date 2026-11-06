@@ -21,5 +21,7 @@ You do not need to use every stage at once. Many people start with a repository 
 
 GitHub is based on the open-source software, Git. 
 
-Git is a version control system that tracks changes to files. It lets you work on your own copy of a project, record a history of your changes
+Git is a version control system that tracks changes to files. It lets you work on your own copy of a project, record a history of your changes, and merge your work with toher people's change safely. 
+
+
 

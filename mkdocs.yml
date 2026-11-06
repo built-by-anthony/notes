@@ -18,10 +18,6 @@ theme:
 nav:
   - Home: index.md
   - Books:
-    - Designing Data-Intensive Applications:
-        - books/designing-data-intensive-applications/ch01-tradeoffs-data-systems-arch.md
-        - books/designing-data-intensive-applications/ch02-defining-non-functional-requirements.md
-        - books/designing-data-intensive-applications/ch03-data-models-query-languges.md
     - Vibe Coding:
         - books/vibe-coding/introduction.md
         - "Part 1: Why Vibe Code?":
@@ -54,6 +50,11 @@ nav:
       - documentation-notes/github/index.md
       - "GitHub Actions": 
         - "Understanding GitHub Actions": documentation-notes/github/github-actions/01-understanding-github-actions.md
+  - "Software Engineering": 
+    - "Designing Data-Intensive Applications":
+      - software-engineering/02-designing-data-intensive-applications/ch01-tradeoffs-data-systems-arch.md
+      - software-engineering/02-designing-data-intensive-applications/ch02-defining-non-functional-requirements.md
+      - software-engineering/02-designing-data-intensive-applications/ch03-data-models-query-languges.md
         
 extra_css:
   - stylesheets/extra.css
