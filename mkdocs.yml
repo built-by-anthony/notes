@@ -45,6 +45,11 @@ nav:
         - Claude Certified Developer:
             - "Claude Certified Developer - Foundations Prep Course": 
                 - "MSO Foundations": claude-certs/claude-certified-developer/foundations-prep-course/mso-foundations.md
+    - Databricks:
+        - Data Engineer Associate: 
+          - Data Engineering in Databricks: databricks/de-associate/data-inegestion-lakeflow/data-engineering-databricks.md
+          - Data Ingestion from Cloud Storage: databricks/de-associate/data-inegestion-lakeflow/data-ingestion-cloud-storage.md
+          - "Appending Metadata Columns on Injest": databricks/de-associate/data-inegestion-lakeflow/appending-metadata-injest.md
   - "Documentation Notes":
     - "GitHub": 
       - documentation-notes/github/index.md
